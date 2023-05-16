@@ -1,10 +1,16 @@
 pkgs_overall <- c("data.table", "reshape2", "ggplot2", "ggrepel", "scales", "paletteer")
 pkgs_surv <- c("survival", "survminer", "cmprsk", "adjustedCurves")
 sapply(pkgs_overall, require, character.only = TRUE, quietly = TRUE)
+sapply(pkgs_surv, require, character.only = TRUE, quietly = TRUE)
 source(paste0(run_path, "codes/Revise/FuncsCols_Revise.r"))
 load(paste0(out_path, "dat_base.RData"))
 
-sapply(pkgs_surv, require, character.only = TRUE, quietly = TRUE)
+dat_surv <- copy(dat_base)
+dat_surv[, surv.year:= surv.month/12]
+dat_surv[caus.death == "Alive", status:= 0]
+dat_surv[caus.death == "CRC", status:= 1]
+dat_surv[caus.death == "nonCRC", status:= 2]
+dat_surv[, caus.death:= factor(caus.death, levels = c("Alive", "CRC", "nonCRC"))]
 
 ### K-M CIF
 fit_overall <- eval(parse(text=paste0("survfit(as.formula(Surv(surv.year, surv.death) ~ ", igroup, "), data = dat_surv)")))
@@ -80,3 +86,20 @@ if (length(summary(dat_surv[, .SD, .SDcols = igroup])) == 2) {
 fit_adj2 <- adjustedcif(data=dat_surv, variable=igroup, ev_time="surv.year", event="surv.death", method="iptw", cause=1, treatment_model=fit_psm2, conf_int=FALSE)
 dat_fit_iptw2 <- as.data.table(fit_adj2$adjcif)
 setnames(dat_fit_iptw2, "group", "strata")
+
+dat_fit_overall[, type:= "K-M"]
+dat_fit_aj[, type:= "A-J"]
+dat_fit_iptw[, type:= "LCA"]
+dat_fit_iptw2[, type:= "Adjusted"]
+
+dat_comp_group <- rbind(dat_fit_overall[, .(time, cif, strata, type)], dat_fit_aj[group == "CRC", .(time, cif, strata, type)], dat_fit_iptw[, .(time, cif, strata, type)], dat_fit_iptw2[, .(time, cif, strata, type)])
+dat_comp_group[, type:= factor(type, levels = c("A-J", "K-M", "Adjusted", "LCA"), labels = c("Aalen-Johansen", "Kaplan-Meier", "Variable-adjusted", "LCAC-adjusted"))]
+cols_comp <- cols_sankey[c(7, 6, 8, 9)]
+plot_cmp_adjust2 <- ggplot(data = dat_comp_group, aes(x = time, y = cif, color = type)) +
+  geom_line(linewidth = 1) +
+  scale_color_manual(values = cols_comp) +
+  theme_bw() +
+  facet_grid(.~strata) +
+  labs(x = "Years after diagnosis", y = "Cumulative incidence", color = "") +
+  theme(axis.title=element_text(size=18), axis.text=element_text(size=13), legend.text=element_text(size=13), strip.text=element_text(size=13), panel.grid=element_blank())
+ggsave(plot_cmp_adjust2, file = paste0(out_path, "plots/survival/CompFacet_cmprsk_", igroup, "_nclass", n_use, "_adjust.jpeg"), dpi=600, width=vwidth, height=6, device="jpeg")
