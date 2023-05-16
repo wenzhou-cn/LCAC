@@ -1,11 +1,14 @@
 pkgs_overall <- c("data.table", "reshape2", "ggplot2", "ggrepel", "scales", "paletteer")
 pkgs_regress <- c("survival", "survminer", "RISCA", "cmprsk", "forestplot") #"fastcmprsk", 
+pkgs_treat <- c("survival", "survminer", "forestplot")
 sapply(pkgs_overall, require, character.only = TRUE, quietly = TRUE)
+sapply(pkgs_regress, require, character.only = TRUE, quietly = TRUE)
+sapply(pkgs_treat, require, character.only = TRUE, quietly = TRUE)
 source(paste0(run_path, "codes/Revise/FuncsCols_Revise.r"))
 
 load(paste0(out_path, "dat_surv.RData"))
-sapply(pkgs_regress, require, character.only = TRUE, quietly = TRUE)
-              
+
+### Cox regression
 idat <- dat_treat[vclass == iclass & dsurg_prim == "Surgery" & dstage == istage & site == isite]
 ifit <- coxph(Surv(surv.newmonth, surv.new) ~ radiation, data = idat)
 res_coef <- summary(ifit)$coef[1, c(1, 3, 4, 5)]
@@ -20,6 +23,7 @@ ires[, pval:= as.numeric(pval)]
 ires[, hr_ci:= paste0(sprintf("%.2f", hr), " (", sprintf("%.2f", l95), "-", sprintf("%.2f", u95), ")")]
 ires[, pval_use:= sapply(pval, function(x) trans_pval(x))]
 
+### Multi-state model
 dat_regress <- copy(dat_surv)
 fit_regress_uni <- coxph(Surv(surv.year, caus.death) ~ vclass, dat_regress, id = patient.id)
 fit_regress_multi <- coxph(Surv(surv.year, caus.death) ~ vclass + age + sex + race + site + dstage, dat_regress, id = patient.id)
