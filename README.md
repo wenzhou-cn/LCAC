@@ -1,6 +1,6 @@
 # LCAC
 
-Code for data cleaning and analysis associated with the manuscript titled "*Latent class analysis-derived classification framework effectively improves the colorectal cancer-specific death stratification in the molecular subtyping system*"
+Code for data cleaning and analysis associated with the manuscript titled "*Latent class analysis-derived classification improves the cancer-specific death stratification of molecular subtyping in colorectal cancer*"
 
 **Version information**  
 R 4.0.3  
