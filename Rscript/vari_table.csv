@@ -1,0 +1,50 @@
+name_org,name_set
+Age recode with single ages and 90+,age_org
+Sex,sex
+Year of diagnosis,year.diag
+"Race and origin recode (NHW, NHB, NHAIAN, NHAPI, Hispanic)",race
+Site recode ICD-O-3/WHO 2008,site
+Behavior code ICD-O-3,behavior
+Histologic Type ICD-O-3,histology
+Grade Recode (thru 2017),grade.2017
+Grade Pathological (2018+),grade.path.2018
+Diagnostic Confirmation,diag.confirm
+Derived EOD 2018 Stage Group (2018+),dStage.2018
+Derived EOD 2018 T (2018+),dT.2018
+Derived EOD 2018 N (2018+),dN.2018
+Derived EOD 2018 M (2018+),dM.2018
+Derived SEER Cmb Stg Grp (2016-2017),dStage.2016
+Derived SEER Combined T (2016-2017),dT.2016
+Derived SEER Combined N (2016-2017),dN.2016
+Derived SEER Combined M (2016-2017),dM.2016
+"Derived AJCC Stage Group, 7th ed (2010-2015)",dStage.2010
+"Derived AJCC T, 7th ed (2010-2015)",dT.2010
+"Derived AJCC N, 7th ed (2010-2015)",dN.2010
+"Derived AJCC M, 7th ed (2010-2015)",dM.2010
+"Derived AJCC Stage Group, 6th ed (2004-2015)",dStage.2004
+"Derived AJCC T, 6th ed (2004-2015)",dT.2004
+"Derived AJCC N, 6th ed (2004-2015)",dN.2004
+"Derived AJCC M, 6th ed (2004-2015)",dM.2004
+AJCC stage 3rd edition (1988-2003),ajcc3.Stage.1988
+T value - based on AJCC 3rd (1988-2003),dT.1988
+N value - based on AJCC 3rd (1988-2003),dN.1988
+M value - based on AJCC 3rd (1988-2003),dM.1988
+RX Summ--Surg Prim Site (1998+),surg_prim
+RX Summ--Surg/Rad Seq,surg_rad
+Reason no cancer-directed surgery,reason_nosurg
+Radiation recode,radiation
+"Chemotherapy recode (yes, no/unk)",chemotherapy
+RX Summ--Systemic/Sur Seq (2007+),surg_sys
+Months from diagnosis to treatment,monDiag2Treat
+CEA Pretreatment Interpretation Recode (2010+),cea.pre
+Perineural Invasion Recode (2010+),per.inva
+Tumor Deposits Recode (2010+),tumor.depo
+COD to site recode,cod.site
+Survival months,surv.month
+Vital status recode (study cutoff used),vital
+Sequence number,seq.num
+First malignant primary indicator,first.malig
+Patient ID,patient.id
+Marital status at diagnosis,marital
+Median household income inflation adj to 2021,income
+Rural-Urban Continuum Code,rural
