@@ -28,6 +28,25 @@ dat_filter5[year.diag >= 2010 & year.diag <= 2015, dT:= dT.2010]
 dat_filter5[year.diag >= 2004 & year.diag <= 2009, dT:= dT.2004]
 dat_filter5[year.diag <= 2003, dT:= dT.1988]
 
+### Re-define N
+dat_filter5[year.diag >= 2018, dN:= dN.2018]
+dat_filter5[year.diag %in% c(2016, 2017), dN:= dN.2016]
+dat_filter5[year.diag >= 2010 & year.diag <= 2015, dN:= dN.2010]
+dat_filter5[year.diag >= 2004 & year.diag <= 2009, dN:= dN.2004]
+dat_filter5[year.diag <= 2003, dN:= dN.1988]
+
+### Re-define M
+dat_filter5[year.diag >= 2018, dM:= dM.2018]
+dat_filter5[year.diag %in% c(2016, 2017), dM:= dM.2016]
+dat_filter5[year.diag >= 2010 & year.diag <= 2015, dM:= dM.2010]
+dat_filter5[year.diag >= 2004 & year.diag <= 2009, dM:= dM.2004]
+dat_filter5[year.diag <= 2003, dM:= dM.1988]
+
+dat_filter5[surg_prim == 0, dsurg_prim:= "No Surgery"]
+dat_filter5[(surg_prim >= 10 & surg_prim <= 80) | surg_prim == 90, dsurg_prim:= "Surgery"]
+dat_filter5[surg_prim %in% c(98, 99, 126), dsurg_prim:= "Unknown"]
+dat_filter5[, dsurg_prim:= factor(dsurg_prim, levels = c("No Surgery", "Surgery", "Unknown"))]
+
 dat_filter6 <- dat_filter5[!(dstage %in% c(88, 90, 98, 99, "NA", "Not applicable", "UNK Stage", "0", "Stage 0") | dT %in% c("c0", "p0", "pIS", "T0", "Tis", "Tis(LAMN)"))]
 dat_filter7 <- dat_filter6[!(site %in% c("Large Intestine, NOS", "Appendix"))]
 dat_filter8 <- dat_filter7[surv.month != "Unknown"]
