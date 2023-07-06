@@ -1,3 +1,5 @@
+run_blrt <- FALSE
+
 pkgs_overall <- c("data.table", "reshape2", "ggplot2", "ggrepel", "scales", "paletteer")
 pkgs_lca <- c("poLCA", "networkD3", "scatterpie", "corrplot", "tidyLPA")
 sapply(pkgs_overall, require, character.only = TRUE, quietly = TRUE)
