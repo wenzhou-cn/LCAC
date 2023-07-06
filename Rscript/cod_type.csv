@@ -1,0 +1,92 @@
+cod,Type
+Accidents and Adverse Effects,External.causes
+Acute Lymphocytic Leukemia,Other.cancers
+Acute Monocytic Leukemia,Other.cancers
+Acute Myeloid Leukemia,Other.cancers
+"Aleukemic, Subleukemic and NOS",Other.cancers
+Alive,Alive
+Alzheimers (ICD-9 and 10 only),Alzheimers
+"Anus, Anal Canal and Anorectum",Other.cancers
+Aortic Aneurysm and Dissection,Cardiovascular
+Atherosclerosis,Cardiovascular
+Bones and Joints,Other.cancers
+Brain and Other Nervous System,Other.cancers
+Breast,Other.cancers
+Cerebrovascular Diseases,Cardiovascular
+Certain Conditions Originating in Perinatal Period,Other.causes
+Cervix Uteri,Other.cancers
+Chronic Liver Disease and Cirrhosis,GI.and.liver
+Chronic Lymphocytic Leukemia,Other.cancers
+Chronic Myeloid Leukemia,Other.cancers
+Chronic Obstructive Pulmonary Disease and Allied Cond,Repiratory
+Colon excluding Rectum,CRC
+"Complications of Pregnancy, Childbirth, Puerperium",Other.causes
+Congenital Anomalies,Other.causes
+Corpus Uteri,Other.cancers
+Diabetes Mellitus,Diabetes.Mellitus
+Diseases of Heart,Cardiovascular
+Esophagus,Other.cancers
+Eye and Orbit,Other.cancers
+Floor of Mouth,Other.cancers
+Gallbladder,Other.cancers
+Gum and Other Mouth,Other.cancers
+Hodgkin Lymphoma,Other.cancers
+Homicide and Legal Intervention,External.causes
+Hypertension without Heart Disease,Cardiovascular
+Hypopharynx,Other.cancers
+"In situ, benign or unknown behavior neoplasm",Benign.or.unknown
+Intrahepatic Bile Duct,Other.cancers
+Kidney and Renal Pelvis,Other.cancers
+Larynx,Other.cancers
+Liver,Other.cancers
+Lung and Bronchus,Other.cancers
+Melanoma of the Skin,Other.cancers
+Miscellaneous Malignant Cancer,Other.cancers
+Myeloma,Other.cancers
+Nasopharynx,Other.cancers
+"Nephritis, Nephrotic Syndrome and Nephrosis",Renal
+Non-Hodgkin Lymphoma,Other.cancers
+Non-Melanoma Skin,Other.cancers
+"Nose, Nasal Cavity and Middle Ear",Other.cancers
+Oropharynx,Other.cancers
+Other Acute Leukemia,Other.cancers
+Other Biliary,Other.cancers
+Other Cause of Death,Other.causes
+Other Digestive Organs,Other.cancers
+"Other Diseases of Arteries, Arterioles, Capillaries",Cardiovascular
+Other Endocrine including Thymus,Other.cancers
+Other Female Genital Organs,Other.cancers
+Other Infectious and Parasitic Diseases including HIV,Infectious
+Other Lymphocytic Leukemia,Other.cancers
+Other Myeloid/Monocytic Leukemia,Other.cancers
+Other Oral Cavity and Pharynx,Other.cancers
+Other Urinary Organs,Other.cancers
+Ovary,Other.cancers
+Pancreas,Other.cancers
+Penis,Other.cancers
+"Peritoneum, Omentum and Mesentery",Other.cancers
+Pleura,Other.cancers
+Pneumonia and Influenza,Infectious
+Prostate,Other.cancers
+Rectum and Rectosigmoid Junction,CRC
+Retroperitoneum,Other.cancers
+Salivary Gland,Other.cancers
+Septicemia,Infectious
+Small Intestine,Other.cancers
+Soft Tissue including Heart,Other.cancers
+Stomach,Other.cancers
+Stomach and Duodenal Ulcers,GI.and.liver
+Suicide and Self-Inflicted Injury,External.causes
+"Symptoms, Signs and Ill-Defined Conditions",Other.causes
+Syphilis,Infectious
+Testis,Other.cancers
+Thyroid,Other.cancers
+Tongue,Other.cancers
+Tonsil,Other.cancers
+"Trachea, Mediastinum and Other Respiratory Organs",Other.cancers
+Tuberculosis,Infectious
+Ureter,Other.cancers
+Urinary Bladder,Other.cancers
+"Uterus, NOS",Other.cancers
+Vagina,Other.cancers
+Vulva,Other.cancers
